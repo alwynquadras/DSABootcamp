@@ -3,17 +3,22 @@ import java.util.Scanner;
 public class Armstrong {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter the number: ");
-        int a = in.nextInt();
-        ArmStrong(a);
+        System.out.println("Print all 3 digits armstrong number: ");
+        for(int i =100; i < 1000; i++){
+            ArmStrong(i);
+        }
     }
     static void ArmStrong(int b){
-      while (b % 10 > 0) {
+      int sum = 0;
+      int original = b;
+      while (b > 0) {
         int c = b % 10;
         int cube = c * c * c;
-        System.out.println(cube);
+        sum = sum + cube;
         b = b / 10;
       }
-
+      if(sum == original){
+          System.out.print(original + " ");
+      }
     }
 }
